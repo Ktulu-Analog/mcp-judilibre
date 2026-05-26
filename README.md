@@ -8,6 +8,12 @@ JUDILIBRE est le moteur Open Data des décisions de justice françaises, publié
 
 ---
 
+## Aperçu
+
+![mcp-judilibre en action dans Demeter](screenshots/judilibre-demeter.png)
+
+---
+
 ## Prérequis
 
 - Python 3.11+
