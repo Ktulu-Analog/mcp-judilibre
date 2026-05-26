@@ -55,12 +55,22 @@ Dans votre application PISTE, copiez :
 
 ## Installation
 
+### Installation locale (Python)
+
 ```bash
 git clone https://github.com/ktulu-analog/mcp-judilibre.git
 cd mcp-judilibre
 python -m venv .venv
 source .venv/bin/activate   # Windows : .venv\Scripts\activate
 pip install -r requirements.txt
+```
+
+### Installation via Docker
+
+```bash
+git clone https://github.com/ktulu-analog/mcp-judilibre.git
+cd mcp-judilibre
+docker build -t mcp-judilibre .
 ```
 
 ---
@@ -89,6 +99,8 @@ export JUDILIBRE_CLIENT_SECRET=votre_client_secret
 
 ## Démarrage
 
+### En local (Python)
+
 ```bash
 python server.py
 ```
@@ -106,6 +118,17 @@ Exemple sur un port personnalisé :
 ```bash
 python server.py --port 8080
 ```
+
+### Via Docker
+
+```bash
+docker run -p 6501:6501 \
+  -e JUDILIBRE_CLIENT_ID=votre_client_id \
+  -e JUDILIBRE_CLIENT_SECRET=votre_client_secret \
+  mcp-judilibre
+```
+
+Le serveur peut tourner sur n'importe quelle machine accessible en réseau. Les clients MCP se connectent alors à `http://adresse-du-serveur:6501/mcp` — le serveur n'a pas besoin d'être sur la même machine que le client.
 
 Le serveur est accessible à `http://localhost:6501/mcp`.
 
@@ -211,7 +234,7 @@ Vérifie que l'API JUDILIBRE est opérationnelle. Aucun paramètre requis. Utile
 - **JUDILIBRE** → décisions de justice Open Data (Cour de cassation, cours d'appel, tribunaux judiciaires)
 - **Légifrance** → textes législatifs et réglementaires, jurisprudence administrative (Conseil d'État, Conseil constitutionnel, CNIL…)
 
-Les deux serveurs peuvent tourner simultanément sur des ports différents (6502 et 6503 par défaut) et être déclarés dans le même fichier de configuration MCP.
+Les deux serveurs peuvent tourner simultanément sur des ports différents (6501 et 6502 par défaut) et être déclarés dans le même fichier de configuration MCP.
 
 ---
 
