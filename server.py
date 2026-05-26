@@ -75,12 +75,14 @@ class _JudiLibreClient:
         )
 
     def _get_token(self) -> str:
-        client_id     = os.getenv("JUDILIBRE_CLIENT_ID")
-        client_secret = os.getenv("JUDILIBRE_CLIENT_SECRET")
+        client_id     = os.getenv("JUDILIBRE_CLIENT_ID", "").strip()
+        client_secret = os.getenv("JUDILIBRE_CLIENT_SECRET", "").strip()
         if not client_id or not client_secret:
             raise RuntimeError(
-                "Identifiants JUDILIBRE manquants.\n"
-                "Définissez JUDILIBRE_CLIENT_ID et JUDILIBRE_CLIENT_SECRET."
+                "Identifiants JUDILIBRE manquants. "
+                "Définissez les variables d'environnement "
+                "JUDILIBRE_CLIENT_ID et JUDILIBRE_CLIENT_SECRET "
+                "(obtenez-les sur https://piste.gouv.fr)."
             )
         if self._token and time.time() < (self._token_expiry - 60):
             return self._token
@@ -873,7 +875,12 @@ if __name__ == "__main__":
 
     logger.info(f"🚀 Démarrage du serveur MCP JUDILIBRE sur http://{args.host}:{args.port}{args.path}")
     logger.info("   8 outils disponibles — spec MCP 2025-03-26 HTTP Streamable")
-    logger.info("   Prérequis : JUDILIBRE_CLIENT_ID et JUDILIBRE_CLIENT_SECRET dans l'environnement")
+    if not os.getenv("JUDILIBRE_CLIENT_ID") or not os.getenv("JUDILIBRE_CLIENT_SECRET"):
+        logger.warning("   ⚠️  JUDILIBRE_CLIENT_ID / JUDILIBRE_CLIENT_SECRET non définis")
+        logger.warning("   ⚠️  Le serveur démarre mais les outils retourneront une erreur sans ces variables")
+        logger.warning("   ⚠️  Obtenez vos credentials sur https://piste.gouv.fr")
+    else:
+        logger.info("   ✅ Credentials JUDILIBRE détectés")
 
     mcp.settings.stateless_http = True
 
