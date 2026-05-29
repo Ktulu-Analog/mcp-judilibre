@@ -1,10 +1,18 @@
 # mcp-judilibre
 
-Serveur [MCP](https://modelcontextprotocol.io/) HTTP Streamable donnant accès à l'**API JUDILIBRE** (PISTE / Cour de cassation) depuis n'importe quel client MCP : Demeter, Claude Desktop, Claude Code, applications Tauri/Electron, ou tout LLM compatible MCP.
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![MCP](https://img.shields.io/badge/MCP-HTTP%20Streamable-6B46C1?logo=anthropic&logoColor=white)](https://modelcontextprotocol.io/)
+[![Docker](https://img.shields.io/badge/Docker-compatible-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
+[![PISTE](https://img.shields.io/badge/API-JUDILIBRE%20PISTE-003189)](https://piste.gouv.fr)
 
-**8 outils** couvrant la recherche plein texte, la consultation de décisions complètes, l'export par lot (deux modes de pagination), la taxonomie des filtres, les statistiques, l'historique transactionnel et le healthcheck.
+---
 
-JUDILIBRE est le moteur Open Data des décisions de justice françaises, publié par la Cour de cassation. Il couvre la **Cour de cassation**, les **cours d'appel** et les **tribunaux judiciaires**.
+`mcp-judilibre` expose l'**API JUDILIBRE** de la Cour de cassation sous forme de serveur [MCP](https://modelcontextprotocol.io/) HTTP Streamable. Il rend les décisions de justice françaises directement accessibles à n'importe quel LLM compatible MCP — Claude Desktop, Claude Code, Demeter, ou toute application Tauri/Electron.
+
+JUDILIBRE est le moteur Open Data des décisions de justice françaises : Cour de cassation, cours d'appel et tribunaux judiciaires. Avec **8 outils**, le serveur couvre la recherche plein texte, la consultation de décisions complètes (texte pseudonymisé, zones structurées, rapprochements), l'export par lot en deux modes de pagination, la taxonomie des filtres, les statistiques et l'historique transactionnel.
+
+Il se déploie en une commande, partage ses identifiants PISTE avec `mcp-legifrance`, et peut tourner sur n'importe quelle machine accessible en réseau.
 
 ---
 
