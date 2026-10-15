@@ -9,6 +9,9 @@
 ---
 **VERSION ARCHIVEE, utilisez le serveur MCP Judilibre de demeter-mcp-pack à la place**
 
+**VERSION ARCHIVEE, utilisez le serveur MCP Judilibre de demeter-mcp-pack à la place**
+
+**VERSION ARCHIVEE, utilisez le serveur MCP Judilibre de demeter-mcp-pack à la place**
 
 
 `mcp-judilibre` expose l'**API JUDILIBRE** de la Cour de cassation sous forme de serveur [MCP](https://modelcontextprotocol.io/) HTTP Streamable. Il rend les décisions de justice françaises directement accessibles à n'importe quel LLM compatible MCP — Claude Desktop, Claude Code, Demeter, ou toute application Tauri/Electron.
