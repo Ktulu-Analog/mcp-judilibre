@@ -7,7 +7,7 @@
 [![PISTE](https://img.shields.io/badge/API-JUDILIBRE%20PISTE-003189)](https://piste.gouv.fr)
 
 ---
-**VERSION ARCHIVEE, utilisez le seveur mcp Judilibre du pack demeter-mcp-pack à la place**
+**VERSION ARCHIVEE, utilisez le serveur MCP Judilibre de demeter-mcp-pack à la place**
 
 
 
